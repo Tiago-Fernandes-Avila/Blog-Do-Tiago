@@ -2,14 +2,23 @@
   margin: 0;
   padding: 0;
 }
+
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('../src/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype')
+}
+
 :root{
   --primary:#070A40 ;
   --secundary: #3834BF;
   --background: #C5CCD9;
-  --color-text-1:#69AFBF;
-  --color-text-2: white; /* cor de destaque para o componente de destaque*/
+  --background2: #f2f2f2;
+  --color-text-1:#000000;
+  --color-text-2: white; 
   --accent:#1D2173;
-
+  --font-def: Inter;
+  
 }
 body{
   background-color: var(--background);
