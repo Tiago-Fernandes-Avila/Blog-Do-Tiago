@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --primary:#070A40 ;
+  --secundary: #3834BF;
+  --background: #C5CCD9;
+  --color-text-1:#69AFBF;
+  --color-text-2: white; /* cor de destaque para o componente de destaque*/
+  --accent:#1D2173;
+
+}
+body{
+  background-color: var(--background);
+}

@@ -1,0 +1,17 @@
+.header{
+    min-width: 100%;
+    max-height: fit-content;
+    padding: 20px;
+    display:flex;
+    background-color: white;
+}
+
+.header nav ul  {
+    display: flex;
+}
+
+h1{
+    color: var(--color-text-2);
+}
+
+
