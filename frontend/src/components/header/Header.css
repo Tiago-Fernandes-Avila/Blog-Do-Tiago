@@ -6,10 +6,12 @@
     background-color: var(--background2);
     border-bottom: 1px solid #ce9d9d;
 
+    
+
 }
 
 .navbar h1 {
-    color: var(--primary);
+    color: var(--color-text-2);
     font-weight: 700;
     font-family: Inter;
 }
@@ -18,7 +20,8 @@
     display: flex;
     gap: 25px;
     justify-content: center;
-    justify-content: space-between;
+    margin-top: 10px    ;
+
 }
 
 .nav-links a {
@@ -35,13 +38,24 @@
 }
 
 
-.icon {
-    width: 24px;
-    height: 24px;
-    fill: #333;
+.icon{
+    cursor: pointer;
     transition: fill 0.3s ease;
 }
 
 .icon:hover {
     fill: #69AFBF;
 }
+
+.nav-search{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+
+}
+
+
+
+
+

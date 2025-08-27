@@ -7,7 +7,7 @@ export function LinkedIcon({ size = 48, color = "#69AFBF" }) {
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
     >
-      <path d="M347 0H35C15.7 0 0 15.7 0 35v312c0 19.3 15.7 35 35 35h312c19.3 0 35-15.7 35-35V35c0-19.3-15.7-35-35-35zM118.8 320.4H59V147.7h59.8v172.7zm-29.9-196c-19.2 0-34.7-15.6-34.7-34.8s15.6-34.8 34.7-34.8 34.7 15.6 34.7 34.8-15.5 34.8-34.7 34.8zM323 320.4h-59.8V236c0-20.2-.4-46.1-28.1-46.1-28.2 0-32.5 22-32.5 44.6v85.9h-59.8V147.7h57.4v23.5h.8c8-15.2 27.6-31.3 56.9-31.3 60.9 0 72.1 40.1 72.1 92.2v88.3z"/>
+      <path d="M347 0H35C15.7 0 0 15.7 0 35v312c0 19.3 15.7 35 35 35h312c19.3 0 35-15.7 35-35V35c0-19.3-15.7-35-35-35zM118.8 320.4H59V147.7h59.8v172.7zm-29.9-196c-19.2 0-34.7-15.6-34.7-34.8s15.6-34.8 34.7-34.8 34.7 15.6 34.7 34.8-15.5 34.8-34.7 34.8zM323 320.4h-59.8V236c0-20.2-.4-46.1-28.1-46.1-28.2 0-32.5 22-32.5 44.6v85.9h-59.8V147.7h57.4v23.5h.8c8-15.2 27.6-31.3 56.9-31.3 60.9 0 72.1 40.1 72.1 92.2v88.3z" />
     </svg>
   );
 }
@@ -34,3 +34,36 @@ export function GithubIcon({ size = 48, color = "#000" }) {
     </svg>
   );
 }
+
+
+export function HomeIcon({ size = 48, color = "#69AFBF" }) {
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill={color}>
+
+      <path d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z" fill="#000000"></path> </svg>
+  )
+
+}
+
+export function SearchIcon({ size = 24, color = "", onClick}) {
+  return (
+    <svg width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill={color}
+      style={{ cursor: "pointer" }}
+      onClick={onClick}>
+      
+
+      <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  )
+}
+
