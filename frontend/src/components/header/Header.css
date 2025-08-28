@@ -3,7 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-    background-color: var(--background2);
+    background-image: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    border-bottom: dashed rgb(209, 209, 209) 0.1em;
     
 
     
