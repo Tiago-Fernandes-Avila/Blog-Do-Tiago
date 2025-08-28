@@ -1,5 +1,8 @@
 
 .search-input{
+    color: rgb(94, 94, 94);
+    font-weight: 600;
+    font-family: Inter;
     opacity: 0;
     width: 0px;
     padding: 10px;
@@ -17,4 +20,5 @@
     transition: 50  0ms linear;
 
 }
+
 

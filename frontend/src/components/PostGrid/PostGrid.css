@@ -1,0 +1,9 @@
+.post-grid{
+    
+    max-width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    
+}

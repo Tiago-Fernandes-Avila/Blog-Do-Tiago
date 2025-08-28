@@ -4,7 +4,7 @@
     align-items: center;
     padding: 0.5rem 2rem;
     background-color: var(--background2);
-    border-bottom: 1px solid #ce9d9d;
+    
 
     
 
@@ -13,7 +13,7 @@
 .navbar h1 {
     color: var(--color-text-2);
     font-weight: 700;
-    font-family: Inter;
+    
 }
 
 .nav-links {

@@ -1,10 +1,14 @@
-import Header from "../components/header/Header.jsx"
+import { Outlet } from "react-router-dom";
+import PostGrid from "../components/PostGrid/PostGrid";
+
 
 
 function HomePage(){
     return (
     <div>
-        <Header/>
+        
+        <PostGrid/>
+        
     </div>
     )
 }
