@@ -1,9 +1,19 @@
-.post-grid{
-    
-    max-width: 700px;
+.post-grid {
+    max-width: min-content;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
     
+    padding: 15px;
+    margin-bottom: 200px;
+    border-radius: 10px;
+   
+}
+
+@media (max-width: 700px) {
+    .post-grid {
+        grid-template-columns: 1fr;
+    }
+
 }

@@ -14,13 +14,13 @@ function Header() {
 
     return (
         <header className="navbar">
-            <h1 className="logo">Blog Do Tiago</h1>
+            <h1 className="logo">Coding In Coffee</h1>
 
 <div className="nav-search">
             <nav className="nav-links">
-                <a href="#" className="home"><HomeIcon size={32} color="#333" className="icon" /></a>
-                <a href="#"><LinkedIcon size={24} color="#333" className="icon" /></a>
-                <a href="#"><GithubIcon size={24} color="#333" className="icon" /> </a>
+                <a href="#" className="home"><HomeIcon size={32} color="#fff" className="icon" /></a>
+                <a href="#"><LinkedIcon size={24} color="#fff" className="icon" /></a>
+                <a href="#"><GithubIcon size={24} color="#fff" className="icon" /> </a>
                 
 
                 <a href="#">Login</a>

@@ -40,14 +40,16 @@ export function HomeIcon({ size = 48, color = "#69AFBF" }) {
 
   return (
     <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      fill={color}>
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  fill={color}
+>
+  <path d="M12 3l9 8h-3v9h-12v-9H3l9-8z"/>
+</svg> )
 
-      <path d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z" fill="#000000"></path> </svg>
-  )
+ 
 
 }
 
