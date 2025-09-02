@@ -9,7 +9,6 @@ function HomePage(){
     <div>
         <HeroSection />
         <PostGrid/>
-        
     </div>
     )
 }

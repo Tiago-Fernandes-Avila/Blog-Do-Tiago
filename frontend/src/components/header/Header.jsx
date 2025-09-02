@@ -2,6 +2,7 @@ import "./Header.css"
 import { LinkedIcon, GithubIcon, HomeIcon, SearchIcon } from "../../assets/Icons.jsx"
 import SearchComponent from "../searchcomponent/SearchComponent.jsx" 
 import {useState} from "react"
+import { Link } from "react-router-dom"
 function Header() {
     const [showS, setShowS] = useState(false)
 
@@ -18,7 +19,7 @@ function Header() {
 
 <div className="nav-search">
             <nav className="nav-links">
-                <a href="#" className="home"><HomeIcon size={32} color="#fff" className="icon" /></a>
+                <Link to="/" className="home"><HomeIcon size={32} color="#fff" className="icon" /></Link>
                 <a href="#"><LinkedIcon size={24} color="#fff" className="icon" /></a>
                 <a href="#"><GithubIcon size={24} color="#fff" className="icon" /> </a>
                 

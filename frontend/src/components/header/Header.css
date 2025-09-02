@@ -25,9 +25,12 @@
 .navbar h1 {
     
     font-weight: 700;
-    font-family: var(--font-julius);
-    
+    font-family: var(--font-ubuntu);
+    font-size: larger;
     color: white;
+    border: 1px solid white;
+    padding: 10px;
+    
     
 }
 svg{

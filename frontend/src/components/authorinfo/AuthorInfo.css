@@ -1,0 +1,23 @@
+.author-info{
+    margin: 20px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 4fr;
+max-width: fit-content;
+    padding:10px;
+    height:max-content;
+}
+
+.post-img-author-info{
+    height: calc(40px);   
+    border-radius: 50%;
+}
+.content-info{
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+    font-style: italic;
+    
+}
+

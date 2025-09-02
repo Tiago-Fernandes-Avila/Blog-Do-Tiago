@@ -4,7 +4,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './routes/HomePage.jsx'
 import App from './routes/App.jsx'
-
+import PostPage from './routes/PostPage.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <HomePage/>
+      },
+      {
+        path:'/post/',
+        element: <PostPage/>
       }
     ],
   }
