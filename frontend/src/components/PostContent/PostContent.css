@@ -1,0 +1,15 @@
+.post-content-container{
+    max-width: 1000px;
+    height: 100vh;
+    margin:auto ;
+    
+}
+
+.post-title{
+    text-align: center;
+    font-family: var(--font-ubuntu);
+    font-weight: 1000;
+    font-size: 40px;
+    
+    margin: 40px 0px 10px 0;
+}
