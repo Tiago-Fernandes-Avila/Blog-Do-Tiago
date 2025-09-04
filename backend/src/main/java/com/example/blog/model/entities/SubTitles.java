@@ -2,17 +2,16 @@ package com.example.blog.model.entities;
 public class SubTitles{
     private Long id;
     private String title;
-    private String content;
-    private Integer display_order;
+    private Integer displayOrder;
 
     private Long post_id;
 
 
-    public SubTitles(Long id, String title, String content,Integer display_order , Long post_id) {
+    public SubTitles(Long id, String title,Integer displayOrder , Long post_id) {
         this.id = id;
         this.title = title;
-        this.content = content;
-        this.display_order = display_order;
+        
+        this.displayOrder = displayOrder;
         this.post_id = post_id;
     }
     public SubTitles() {
@@ -30,12 +29,7 @@ public class SubTitles{
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getContent() {
-        return content;
-    }
-    public void setContent(String content) {
-        this.content = content;
-    }
+    
     public Long getPost_id() {
         return post_id;
     }
@@ -69,11 +63,11 @@ public class SubTitles{
             return false;
         return true;
     }
-    public Integer getdisplay_order() {
-        return display_order;
+    public Integer getDisplayOrder() {
+        return displayOrder;
     }
-    public void setdisplay_order(Integer display_order) {
-        this.display_order = display_order;
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
     } 
 
     

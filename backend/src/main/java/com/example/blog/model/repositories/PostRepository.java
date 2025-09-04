@@ -25,6 +25,14 @@ public class PostRepository {
     private final String delete_statment_sql = "DELETE FROM tb_posts WHERE id = ?";
 
 
+
+    private final String find_post_subtitles_and_paragraphs = "SELECT p.id AS post_id, p.title AS post_title, s.id AS sub_title_id, s.title AS sub_title_title,"+
+    "g.id AS paragraph_id, g.content AS paragraph_content, g.display_order AS paragraph_display_order"+
+    "";
+
+    
+
+
     @Transactional
     public void save(Post post){
         jdbcClient.sql(save_statment_sql)

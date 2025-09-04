@@ -3,19 +3,18 @@ package com.example.blog.model.entities;
 public class Paragraphs {
     private Long id;
     private String content;
-    private Integer display_order;
-
-    private Long sub_title_id;
+    private Integer displayOrder;
+    private Long subTitleId;
 
     public Paragraphs(){
 
     }
 
-    public Paragraphs(Long id, String content, Integer display_order, Long sub_title_id) {
+    public Paragraphs(Long id, String content, Integer displayOrder, Long subTitleId) {
         this.id = id;
         this.content = content;
-        this.display_order = display_order;
-        this.sub_title_id = sub_title_id;
+        this.displayOrder = displayOrder;
+        this.subTitleId = subTitleId;
     }
 
     public Long getId() {
@@ -34,12 +33,12 @@ public class Paragraphs {
         this.content = content;
     }
 
-    public Long getSub_title_id() {
-        return sub_title_id;
+    public Long getSubTitleId() {
+        return subTitleId;
     }
 
-    public void setSub_title_id(Long sub_title_id) {
-        this.sub_title_id = sub_title_id;
+    public void setSubTitleId(Long subTitleId) {
+        this.subTitleId = subTitleId;
     }
 
     @Override
@@ -50,12 +49,12 @@ public class Paragraphs {
         return result;
     }
 
-   public Integer getOrder() {
-        return display_order;
+   public Integer getDisplayOrder() {
+        return displayOrder;
     }
 
-    public void setOrder(Integer display_order) {
-        this.display_order = display_order;
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
     }
 
     @Override
