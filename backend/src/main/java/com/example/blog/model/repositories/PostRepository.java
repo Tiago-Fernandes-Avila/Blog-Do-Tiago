@@ -1,76 +1,158 @@
 package com.example.blog.model.repositories;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.blog.model.dtos.PostPageDto;
+import com.example.blog.model.entities.Paragraphs;
 import com.example.blog.model.entities.Post;
+import com.example.blog.model.entities.SubTitles;
 
 @Repository
 public class PostRepository {
     private final JdbcClient jdbcClient;
 
-    public PostRepository(JdbcClient jdbcClient){
+    public PostRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 
     private final String findAll_statment_sql = "SELECT * FROM tb_posts";
     private final String findById_statment_sql = "SELECT * FROM tb_posts WHERE id = %?% OR title = ?% ORDER BY title LIMIT 15";
     private final String findByTitle_statment_sql = "SELECT * FROM tb_posts WHERE title LIKE ?";
-    private final String save_statment_sql = "INSERT INTO tb_posts(id,title, intro_content, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
-    private final String update_statment_sql = "UPDATE tb_posts SET title = ?, intro_content = ? WHERE id = ?";
+    private final String save_statment_sql = "INSERT INTO tb_posts(id,title, intro, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
+    private final String update_statment_sql = "UPDATE tb_posts SET title = ?, content = ? WHERE id = ?";
     private final String delete_statment_sql = "DELETE FROM tb_posts WHERE id = ?";
 
+    private final String find_post_subtitles_and_paragraphs = """
+                        SELECT
+                p.id         AS post_id,
+                p.title      AS post_title,
+                p.intro     AS intro,
 
+                st.id        AS sub_id,
+                st.title     AS sub_title,
+                st.display_order AS display_order,
 
-    private final String find_post_subtitles_and_paragraphs = "SELECT p.id AS post_id, p.title AS post_title, s.id AS sub_title_id, s.title AS sub_title_title,"+
-    "g.id AS paragraph_id, g.content AS paragraph_content, g.display_order AS paragraph_display_order"+
-    "";
+                para.id      AS para_id,
+                para.para_content AS para_content,
+                para.display_order AS para_order
 
-    
-
+            FROM tb_posts p
+            LEFT JOIN tb_sub_titles st ON st.post_id = p.id
+            LEFT JOIN tb_paragraphs para ON para.sub_title_id = st.id
+            WHERE p.id = ?
+            ORDER BY display_order, para_order
+                        """;
 
     @Transactional
-    public void save(Post post){
+    public void save(Post post) {
         jdbcClient.sql(save_statment_sql)
-        .param(post.getId())
-        .param(post.getTitle())
-        .param(post.getIntroContent())
-        .param(post.getCreatedAt())
-        .param(post.getUpdatedAt())
-        .update();
+                .param(post.getId())
+                .param(post.getTitle())
+                .param(post.getIntro())
+                .param(post.getCreatedAt())
+                .param(post.getUpdatedAt())
+                .update();
     }
+
     @Transactional
-    public void saveAll(List<Post> post){
+    public void saveAll(List<Post> post) {
         for (Post p : post) {
-            save(p);            
+            save(p);
         }
     }
 
     @Transactional
     public void update(Post post) {
-        jdbcClient.sql(update_statment_sql).param(post.getId()).param(post.getTitle()).param(post.getIntroContent()).update();
+        jdbcClient.sql(update_statment_sql).param(post.getId()).param(post.getTitle()).param(post.getIntro())
+                .update();
     }
+
     @Transactional
-    public void delete(Long id){
+    public void delete(Integer id) {
         jdbcClient.sql(delete_statment_sql).param(id).update();
     }
 
-    
     @Transactional
-    public List<Post> findAll(){
+    public List<Post> findAll() {
         return jdbcClient.sql(findAll_statment_sql).query(Post.class).list();
     }
+
     @Transactional
-    public Optional<Post> findById(Long id){
+    public Optional<Post> findById(Integer id) {
         return jdbcClient.sql(findById_statment_sql).param(id).query(Post.class).optional();
     }
 
     @Transactional
-    public List<Post> findByTitle(String title){ //i will use it for dinamic search in future for UX
+    public List<Post> findByTitle(String title) { // i will use it for dinamic search in future for UX
         return jdbcClient.sql(findByTitle_statment_sql).param(title).query(Post.class).list();
     }
+
+    @Transactional
+    public Post findPageElementsById(Integer postId) {
+        List<PostPageDto> rows = jdbcClient.sql(find_post_subtitles_and_paragraphs)
+                .param(postId)
+                .query((rs, rowNum) -> new PostPageDto(
+                        rs.getInt("post_id"),
+                        rs.getString("post_title"),
+                        rs.getString("intro"),
+                        rs.getInt("sub_id"),
+                        rs.getString("sub_title"),
+                        rs.getInt("display_order"),
+                        rs.getInt("para_id"),
+                        rs.getString("para_content"),
+                        rs.getInt("para_order")))
+                .list(); //tenho um objeto que armazena o conglomerado da query preciso separar todas esses tuplas em objetos post dentro dos posts devo armazenar os sub titutlos na lista e nos sub titulos seus paragrafos em lista
+
+        Map<Integer, Post> postMap = new LinkedHashMap<>();
+        Map<Integer, SubTitles> subTitleMap = new LinkedHashMap<>();
+
+        
+        
+        
+        for(PostPageDto row: rows){
+           Post post = postMap.computeIfAbsent(postId, (id) -> { //salve o post do determinado id_post se ele não existe
+            Post p = new Post();
+            p.setId(row.postId());
+            p.setTitle(row.postTitle());
+            p.setIntro(row.content());
+            p.setSubTitles(new ArrayList<>());
+            return p;
+            });
+        
+            if(row.subId() == null){
+                continue;
+            }
+            
+           
+            subTitleMap.computeIfAbsent(row.subId(), (id) -> {
+            SubTitles s = new SubTitles(row.subId(), row.title(),row.displayOrder(), new ArrayList<>(), row.postId());
+                postMap.get(postId).getSubTitles().add(s);
+                return s;
+            }
+                );
+
+
+            if (row.paraId() == null){
+                continue;
+            }
+            
+            
+                Paragraphs p = new Paragraphs(row.paraId(), row.paraContent(), row.paraOrder(), row.subId());
+
+                subTitleMap.get(row.subId()).getParagraphs().add(p);
+               
+        }
+
+        return postMap.get(postId);
+
+    }
+
 }

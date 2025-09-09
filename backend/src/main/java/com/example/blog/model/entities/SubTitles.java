@@ -1,13 +1,25 @@
 package com.example.blog.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SubTitles{
-    private Long id;
+    private Integer id;
     private String title;
     private Integer displayOrder;
+    private List<Paragraphs> paragraphs; 
+    private Integer post_id;
+    
 
-    private Long post_id;
 
-
-    public SubTitles(Long id, String title,Integer displayOrder , Long post_id) {
+    public SubTitles(Integer id, String title, Integer displayOrder, ArrayList<Paragraphs> paragraphs, Integer post_id) {
+        this.id = id;
+        this.title = title;
+        this.displayOrder = displayOrder;
+        this.paragraphs = paragraphs;
+        this.post_id = post_id;
+    }
+    public SubTitles(Integer id, String title,Integer displayOrder , Integer post_id) {
         this.id = id;
         this.title = title;
         
@@ -17,10 +29,11 @@ public class SubTitles{
     public SubTitles() {
     }
     
-    public Long getId() {
+    
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getTitle() {
@@ -30,10 +43,10 @@ public class SubTitles{
         this.title = title;
     }
     
-    public Long getPost_id() {
+    public Integer getPost_id() {
         return post_id;
     }
-    public void setPost_id(Long post_id) {
+    public void setPost_id(Integer post_id) {
         this.post_id = post_id;
     }
 
@@ -68,6 +81,12 @@ public class SubTitles{
     }
     public void setDisplayOrder(Integer displayOrder) {
         this.displayOrder = displayOrder;
+    }
+    public List<Paragraphs> getParagraphs() {
+        return paragraphs;
+    }
+    public void setParagraphs(List<Paragraphs> paragraphs) {
+        this.paragraphs = paragraphs;
     } 
 
     

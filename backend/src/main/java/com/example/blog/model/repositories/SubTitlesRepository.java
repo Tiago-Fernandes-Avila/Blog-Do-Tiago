@@ -21,7 +21,7 @@ public class SubTitlesRepository {
     private final String findAll_statment_sql = "SELECT * FROM tb_sub_titles";
     private final String findById_statment_sql = "SELECT * FROM tb_sub_titles WHERE id = ?";
     private final String save_statment_sql = "INSERT INTO tb_sub_titles(id, title, content, display_order, post_id) VALUES (?, ?, ?, ?)";
-    private final String update_statment_sql = "UPDATE tb_sub_titles SET title = ?, intro_content = ? WHERE id = ?";
+    private final String update_statment_sql = "UPDATE tb_sub_titles SET title = ?, content = ? WHERE id = ?";
     private final String delete_statment_sql = "DELETE FROM tb_sub_titles WHERE id = ?";
 
 

@@ -23,7 +23,7 @@ public class ParagraphRepositry {
     private final String findAll_statment_sql = "SELECT * FROM tb_paragraphs";
     private final String findById_statment_sql = "SELECT * FROM tb_paragraphs WHERE id = ?";
     private final String save_statment_sql = "INSERT INTO tb_paragraphs(id, content, display_order, sub_title_id) VALUES ( ?, ?, ?, ?)";
-    private final String update_statment_sql = "UPDATE tb_paragraphs SET content = ?, display_order = ?, sub_title_id = ? WHERE id = ?";
+    private final String update_statment_sql = "UPDATE tb_paragraphs SET para_content = ?, display_order = ?, sub_title_id = ? WHERE id = ?";
     private final String delete_statment_sql = "DELETE FROM tb_paragraphs WHERE id = ?";
 
 
@@ -31,7 +31,7 @@ public class ParagraphRepositry {
     public void save(Paragraphs paragraphs){
         jdbcClient.sql(save_statment_sql)
         .param(paragraphs.getId())
-        .param(paragraphs.getContent())
+        .param(paragraphs.getParaContent())
         .param(paragraphs.getDisplayOrder())
         .param(paragraphs.getSubTitleId())
         .update();
@@ -47,7 +47,7 @@ public class ParagraphRepositry {
     public void update(Paragraphs paragraphs) {
         jdbcClient.sql(update_statment_sql)
         .param(paragraphs.getId())
-        .param(paragraphs.getContent())
+        .param(paragraphs.getParaContent())
         .param(paragraphs.getDisplayOrder())
         .param(paragraphs.getSubTitleId())
         .update();

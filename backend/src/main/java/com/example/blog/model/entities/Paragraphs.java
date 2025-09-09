@@ -1,43 +1,43 @@
 package com.example.blog.model.entities;
 
 public class Paragraphs {
-    private Long id;
-    private String content;
+    private Integer id;
+    private String paraContent;
     private Integer displayOrder;
-    private Long subTitleId;
+    private Integer subTitleId;
 
     public Paragraphs(){
 
     }
 
-    public Paragraphs(Long id, String content, Integer displayOrder, Long subTitleId) {
+    public Paragraphs(Integer id, String paraContent, Integer displayOrder, Integer subTitleId) {
         this.id = id;
-        this.content = content;
+        this.paraContent = paraContent;
         this.displayOrder = displayOrder;
         this.subTitleId = subTitleId;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
     
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getParaContent() {
+        return paraContent;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setParaContent(String paraContent) {
+        this.paraContent = paraContent;
     }
 
-    public Long getSubTitleId() {
+    public Integer getSubTitleId() {
         return subTitleId;
     }
 
-    public void setSubTitleId(Long subTitleId) {
+    public void setSubTitleId(Integer subTitleId) {
         this.subTitleId = subTitleId;
     }
 

@@ -1,19 +1,31 @@
 package com.example.blog.model.entities;
 
 import java.time.Instant;
+import java.util.List;
 
 public class Post {
-    private Long id;
+    private Integer id;
     private String title;
-    private String introContent;
+    private String intro;
+    private List<SubTitles> subTitles; 
     private Instant createdAt;
     private Instant updatedAt;
     
     
-    public Post(Long id, String title, String introContent, Instant createdAt, Instant updatedAt) {
+    public Post(Integer id, String title, String intro, List<SubTitles> subTitles, Instant createdAt,
+            Instant updatedAt) {
         this.id = id;
         this.title = title;
-        this.introContent = introContent;
+        this.intro = intro;
+        this.subTitles = subTitles;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public Post(Integer id, String title, String intro, Instant createdAt, Instant updatedAt) {
+        this.id = id;
+        this.title = title;
+        this.intro = intro;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -22,16 +34,16 @@ public class Post {
     
     }
     
-    public Post(Long id, String title, String introContent) {
+    public Post(Integer id, String title, String intro) {
         this.id = id;
         this.title = title;
-        this.introContent = introContent;
+        this.intro = intro;
         
     }
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getTitle() {
@@ -40,11 +52,11 @@ public class Post {
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getIntroContentintroContent() {
-        return introContent;
+    public String getIntro() {
+        return intro;
     }
-    public void setIntroContentintroContent(String introContent) {
-        this.introContent = introContent;
+    public void setIntro(String intro) {
+        this.intro = intro;
     }
     @Override
     public int hashCode() {
@@ -70,13 +82,8 @@ public class Post {
         return true;
     }
 
-    public String getIntroContent() {
-        return introContent;
-    }
+    
 
-    public void setIntroContent(String introContent) {
-        this.introContent = introContent;
-    }
 
     public Instant getCreatedAt() {
         return createdAt;
@@ -92,6 +99,14 @@ public class Post {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public List<SubTitles> getSubTitles() {
+        return subTitles;
+    }
+
+    public void setSubTitles(List<SubTitles> subTitles) {
+        this.subTitles = subTitles;
     }
 
 
