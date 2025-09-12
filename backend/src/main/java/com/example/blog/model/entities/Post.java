@@ -7,39 +7,33 @@ public class Post {
     private Integer id;
     private String title;
     private String intro;
+    private String postImagePath;
+    private Integer ownerUserId; 
     private List<SubTitles> subTitles; 
     private Instant createdAt;
     private Instant updatedAt;
     
     
-    public Post(Integer id, String title, String intro, List<SubTitles> subTitles, Instant createdAt,
-            Instant updatedAt) {
+    
+    public Post(Integer id, String title, String intro, String postImagePath, Integer ownerUserId,
+            List<SubTitles> subTitles, Instant createdAt, Instant updatedAt) {
         this.id = id;
         this.title = title;
         this.intro = intro;
+        this.postImagePath = postImagePath;
+        this.ownerUserId = ownerUserId;
         this.subTitles = subTitles;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
-    public Post(Integer id, String title, String intro, Instant createdAt, Instant updatedAt) {
-        this.id = id;
-        this.title = title;
-        this.intro = intro;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
+    
 
     public Post(){
     
     }
     
-    public Post(Integer id, String title, String intro) {
-        this.id = id;
-        this.title = title;
-        this.intro = intro;
-        
-    }
+    
     public Integer getId() {
         return id;
     }
@@ -107,6 +101,22 @@ public class Post {
 
     public void setSubTitles(List<SubTitles> subTitles) {
         this.subTitles = subTitles;
+    }
+
+    public String getPostImagePath() {
+        return postImagePath;
+    }
+
+    public void setPostImagePath(String postImagePath) {
+        this.postImagePath = postImagePath;
+    }
+
+    public Integer getOwnerUserId() {
+        return ownerUserId;
+    }
+
+    public void setOwnerUserId(Integer ownerUserId) {
+        this.ownerUserId = ownerUserId;
     }
 
 

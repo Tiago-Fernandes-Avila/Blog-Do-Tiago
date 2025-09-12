@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.blog.model.dtos.PostsFromUserDto;
 import com.example.blog.model.entities.Users;
 
 @Repository
@@ -21,9 +22,9 @@ public UsersRepository(JdbcClient jdbcClient){
     private final String findAll_statment_sql = "SELECT * FROM tb_users";
     private final String findById_statment_sql = "SELECT * FROM tb_users WHERE id = ?";
     private final String findByTitle_statment_sql = "SELECT * FROM tb_users WHERE title LIKE ?";
-    private final String save_statment_sql = "INSERT INTO tb_users(id, user_name, password, email, profile_picture_path, description) VALUES (?, ?, ?, ?, ?, ?)";
+    private final String save_statment_sql = "INSERT INTO tb_users(id, user_name, password, email, profile_image_path, description) VALUES (?, ?, ?, ?, ?, ?)";
     private final String update_statment_sql = "UPDATE tb_users SET user_name = ?, password = ?, email = ?, profile_user_path = ?, description = ? WHERE id = ?";
-    private final String delete_statment_sql = "DELETE FROM tb_users WHERE id = ?";
+    private final String delete_statment_sql = "DELETE FROM tb_users WHERE id = ?"; 
 
 
 
@@ -74,8 +75,8 @@ public UsersRepository(JdbcClient jdbcClient){
     }
 
 
-    @Transactional
-    public List<>
+
+    
 
 
 
