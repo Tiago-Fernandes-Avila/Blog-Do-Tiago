@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.blog.model.dtos.PostDto;
 import com.example.blog.model.dtos.PostsFromUserDto;
 import com.example.blog.model.entities.Post;
 import com.example.blog.model.repositories.PostRepository;
@@ -29,5 +30,12 @@ private PostRepository postRepository;
     public List<PostsFromUserDto> getPosts() {
         return postRepository.findPostFromUserName("Tiago24062003");
     }
+
+    @GetMapping("posts/{limit}/{page}")
+    public List<PostDto> getPostsWithPagination(@PathVariable Integer limit, @PathVariable Integer page) {
+        List<PostDto> posts = postRepository.findAll(limit, page);
+        return posts;   
+    }
+    
     
 }

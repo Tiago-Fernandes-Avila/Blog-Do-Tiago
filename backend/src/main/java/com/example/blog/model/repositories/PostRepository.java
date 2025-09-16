@@ -1,5 +1,6 @@
 package com.example.blog.model.repositories;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -10,6 +11,7 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.blog.model.dtos.PostDto;
 import com.example.blog.model.dtos.PostPageDto;
 import com.example.blog.model.dtos.PostsFromUserDto;
 import com.example.blog.model.entities.Paragraphs;
@@ -23,8 +25,29 @@ public class PostRepository {
     public PostRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
+    //2 params quantidade por pagina, e a pagina é igual ((? - 1) * quantidade)
 
-    private final String findAll_statment_sql = "SELECT * FROM tb_posts";
+
+    //Integer id, String title, String intro, String postImagePath, Instant createdAt, Instant updatedAt, Integer ownerUserId, String userName, String profilePicturePath
+
+    private final String findAll_statment_sql = """
+     SELECT p.id,
+       p.title,
+       p.intro,
+       p.post_image_path   AS postImagePath,
+       p.created_at        AS createdAt,
+       p.updated_at        AS updatedAt,
+       u.id                AS ownerUserId,
+       u.user_name         AS userName,
+       u.profile_image_path AS profilePicturePath
+        FROM tb_posts p
+    LEFT JOIN tb_users u ON u.id = p.users_id
+    ORDER BY created_at DESC
+    LIMIT ? OFFSET ?
+""";
+    
+    
+    
     private final String findById_statment_sql = "SELECT * FROM tb_posts WHERE id = %?% OR title = ?% ORDER BY title LIMIT 15";
     private final String findByTitle_statment_sql = "SELECT * FROM tb_posts WHERE title LIKE ?";
     private final String save_statment_sql = "INSERT INTO tb_posts(id,title, intro, post_image_path, users_id) VALUES (?, ?, ?, ?, ?)";
@@ -95,8 +118,12 @@ public class PostRepository {
     }
 
     @Transactional
-    public List<Post> findAll() {
-        return jdbcClient.sql(findAll_statment_sql).query(Post.class).list();
+    public List<PostDto> findAll(Integer limit, Integer page) {
+
+        return jdbcClient.sql(findAll_statment_sql)
+        .param(limit)
+        .param(((page - 1) * limit))
+        .query(PostDto.class).list();
     }
 
     @Transactional
