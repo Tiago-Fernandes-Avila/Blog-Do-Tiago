@@ -27,6 +27,7 @@ return(
                     para links onde o usuario pode clicar e redirecionar para a rede social escolhida pronto para compartilhamento.
                     card com informaçãoes do img do autor, data, autor
                 </p>
+                
 
 
 

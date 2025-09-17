@@ -1,13 +1,20 @@
+import { useState } from "react";
 import PostCard from "../PostCard/PostCard";
 import "./PostGrid.css"
 
-function PostGrid(){
+function PostGrid(props){
+    const objetos = props.dado;
     return (
         
+        
         <div className="post-grid">
-            <PostCard/>
-            <PostCard/>
-            <PostCard/>
+               
+            {objetos.map((e) =>(
+                <PostCard dadosCard={e}/>
+            )
+            )}
+                    
+                
         </div>
     )
 
