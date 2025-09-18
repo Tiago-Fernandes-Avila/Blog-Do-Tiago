@@ -1,21 +1,25 @@
-import axios from "axios"
 import "./PaginationControl.css"
-import { useEffect, useState } from "react";
-import { getPageNumber } from "../../http/PostsHttp";
+import { useEffect, useRef, useState } from "react";
 
-export default function PaginationControl(){
-    const numberPages = getPageNumber(limit, page);
-
-    const [currentpage, setCurrentPage] = useState(1)
-    const [paginas, setPaginas] = useState([]) 
-        
+export default function PaginationControl({totalPaginas, paginaAtual, setPaginaAtual}) {
+   
+    function handleEvent1(event){
+        console.log(event.target.innerHTML)
+        setPaginaAtual(Number(event.target.innerText));
+    }    
 
     return (
         <>
             <div className="containerpagination">
-            Numero de paginas: {numberPages}
+          
+          
+      {Array.from({ length: totalPaginas }, (_, index) => (
+        <div className="button1" key={index + 1} onClick={handleEvent1} >
+          {index + 1}
+        </div>
+      ))}
             </div>
-        
+
         </>
     )
 }
