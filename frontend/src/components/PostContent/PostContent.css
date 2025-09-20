@@ -2,6 +2,8 @@
     max-width: 1000px;
     height: 100vh;
     margin:auto ;
+    padding: 20px;
+    
     
 }
 
@@ -12,4 +14,39 @@
     font-size: 40px;
     
     margin: 40px 0px 10px 0;
+}
+
+.post-content-title{
+    font-family: var(--font-ubuntu);
+    font-weight: 1000;
+    font-size: 60px;
+    margin: 30px;
+    text-align: center;
+}
+.post-content-intro{
+font-size: 40px;
+padding: 20px;
+}
+.post-content-subtitle{
+    font-family: var(--font-ubuntu);
+    font-weight: 1000;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+.post-content-paragraph{
+    font-family: var(--font-ubuntu);
+    font-size: 25px;
+    margin: 30px;
+    padding: 20px;
+    text-align: justify;
+    
+    
+}
+.post-content-paragraph::first-letter{
+    margin-left: 35px;
+    
+}
+.post-content-img{
+    width: 100%;
 }
