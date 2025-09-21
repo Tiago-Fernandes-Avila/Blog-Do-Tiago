@@ -72,6 +72,8 @@ public UsersRepository(JdbcClient jdbcClient){
     @Transactional
     public Optional<Users> findById(Long id){
         return jdbcClient.sql(findById_statment_sql).param(id).query(Users.class).optional();
+
+        //faço a primeira request e guardo o valor da limit depois passo como parametro post para pegar a quantidade de paginas usando Math.ceil para arrednodar para cima
     }
 
 

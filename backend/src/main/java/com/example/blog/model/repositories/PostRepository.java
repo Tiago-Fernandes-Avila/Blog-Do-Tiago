@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.blog.model.dtos.NumberPosts;
 import com.example.blog.model.dtos.PostDto;
 import com.example.blog.model.dtos.PostPageDto;
 import com.example.blog.model.dtos.PostsFromUserDto;
@@ -48,11 +49,13 @@ public class PostRepository {
     
     
     
-    private final String findById_statment_sql = "SELECT * FROM tb_posts WHERE id = %?% OR title = ?% ORDER BY title LIMIT 15";
+    private final String findById_statment_sql = "SELECT * FROM tb_posts WHERE id = ?";
     private final String findByTitle_statment_sql = "SELECT * FROM tb_posts WHERE title LIKE ?";
     private final String save_statment_sql = "INSERT INTO tb_posts(id,title, intro, post_image_path, users_id) VALUES (?, ?, ?, ?, ?)";
     private final String update_statment_sql = "UPDATE tb_posts SET title = ?, content = ? WHERE id = ?";
     private final String delete_statment_sql = "DELETE FROM tb_posts WHERE id = ?";
+    private final String getNumberPages_sql = "SELECT COUNT(id) AS quantityPosts FROM TB_POSTS";
+
 
     private final String find_post_subtitles_and_paragraphs = """
                         SELECT
@@ -136,6 +139,22 @@ public class PostRepository {
         return jdbcClient.sql(findByTitle_statment_sql).param(title).query(Post.class).list();
     }
 
+   
+
+    @Transactional
+    public List<PostsFromUserDto> findPostFromUserName(String username) {
+        return jdbcClient.sql(find_posts_by_username).param(username).query(PostsFromUserDto.class).list();
+
+    }
+    @Transactional
+    public Integer getNumberPosts(){
+        Integer numberPosts = 0;
+        numberPosts = jdbcClient.sql(getNumberPages_sql).query(NumberPosts.class).optional().get().quantityPosts();
+            return numberPosts;
+    }
+
+
+
     @Transactional
     public Post findPageElementsById(Integer postId) {
         List<PostPageDto> rows = jdbcClient.sql(find_post_subtitles_and_paragraphs)
@@ -193,10 +212,9 @@ public class PostRepository {
 
     }
 
-    @Transactional
-    public List<PostsFromUserDto> findPostFromUserName(String username) {
-        return jdbcClient.sql(find_posts_by_username).param(username).query(PostsFromUserDto.class).list();
 
-    }
+
 
 }
+
+
