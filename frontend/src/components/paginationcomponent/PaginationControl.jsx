@@ -14,7 +14,7 @@ export default function PaginationControl({totalPaginas, paginaAtual, setPaginaA
           
           
       {Array.from({ length: totalPaginas }, (_, index) => (
-        <div className="button1" key={index + 1} onClick={handleEvent1} >
+        <div className={`button1 ${paginaAtual === index + 1 ? "active" : ""}`} key={index + 1} onClick={handleEvent1} >
           {index + 1}
         </div>
       ))}
