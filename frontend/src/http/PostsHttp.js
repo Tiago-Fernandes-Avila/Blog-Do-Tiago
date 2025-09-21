@@ -20,7 +20,7 @@ export async function  getNumberPageInHome() {
 
     try{
     const res = await axios.get("http://localhost:8080/api/posts/number")
-             return Math.ceil(res.data / 2);
+             return Math.ceil(res.data / 4);
             
     }
     catch (erro){

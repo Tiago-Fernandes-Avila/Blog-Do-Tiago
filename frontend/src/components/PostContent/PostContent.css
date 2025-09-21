@@ -37,7 +37,7 @@ padding: 20px;
 .post-content-paragraph{
     font-family: var(--font-ubuntu);
     font-size: 25px;
-    margin: 30px;
+    
     padding: 20px;
     text-align: justify;
     
@@ -49,4 +49,5 @@ padding: 20px;
 }
 .post-content-img{
     width: 100%;
+    margin: auto;
 }

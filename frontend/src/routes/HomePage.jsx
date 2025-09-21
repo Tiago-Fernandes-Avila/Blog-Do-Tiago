@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection/HeroSection.jsx";
 import { getPostsHome, getNumberPageInHome } from "../http/PostsHttp.js"
 import PaginationControl from "../components/paginationcomponent/PaginationControl.jsx";
 import {useEffect, useState} from "react"
+import Footer from "../components/footer/Footer.jsx";
 
 
 function HomePage() {
@@ -13,7 +14,7 @@ function HomePage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPostsHome(2, paginaAtual).then((data) => setPosts(data));
+    getPostsHome(4, paginaAtual).then((data) => setPosts(data));
   }, [paginaAtual]);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ function HomePage() {
                 
             </PaginationControl >
             
+            <Footer></Footer>
         </div>
     )
 }

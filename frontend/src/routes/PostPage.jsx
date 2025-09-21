@@ -1,31 +1,39 @@
-import { useEffect, useState } from "react";
-import PostContent from "../components/PostContent/PostContent.jsx"
-import { getPostContent } from "../http/PostsHttp.js";
-
-
-function PostPage(){
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import PostContent from '../components/PostContent/PostContent.jsx';
+import { getPostContent } from '../http/PostsHttp.js';
+import Footer from '../components/footer/Footer.jsx';
+function PostPage() {
+  const { id } = useParams(); 
+  const [content, setContent] = useState(null); 
+  const [isLoading, setIsLoading] = useState(true); 
   
-    //preciso pegar a variavel do id do post lá para listagem e passar como param para axios 
-    const [content, setContent] = useState({erro: "erro ainda não carregou!"})
-   
+
+  useEffect(() => {
+    setIsLoading(true);
     
-useEffect(()=>{
-    getPostContent(2).then(data => {
-        setContent(data.data) 
-        }
-    )
-    .catch(err => console.log(err))
-    
-},[])
+
+    getPostContent(id)
+      .then((response) => {
+        setContent(response.data);
+        setIsLoading(false); 
+      })
+      .catch((err) => {
+        console.error('Erro ao carregar o post:', err);
+        
+      });
+  }, [id]); 
 
 
-
-    return (
-
-        <div>
-            <PostContent content={content} ></PostContent>
-        </div>
-    )
-
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+  return (
+    <div>
+      <PostContent content={content}/>
+      
+    </div>
+  );
 }
+
 export default PostPage;

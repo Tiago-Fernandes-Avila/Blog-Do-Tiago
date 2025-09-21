@@ -11,7 +11,7 @@ const date = new Date().toLocaleDateString()
 
 export default function PostCard(props) {
     const cardInfo = props.dadosCard;    
-
+    const link = `post/${cardInfo.id}`
     //vai vir do backend
     const postType = "Coding Concepts"
 
@@ -22,7 +22,7 @@ export default function PostCard(props) {
             <div className="post-info">
 
                 <TagType postType={postType}></TagType>
-                <Link to="/post">
+                <Link to={link}>
 
                     <h2 className="post-title">
                         {cardInfo.title}

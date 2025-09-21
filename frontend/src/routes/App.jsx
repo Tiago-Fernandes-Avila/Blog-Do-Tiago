@@ -10,7 +10,7 @@ function App() {
             
             <main>
             <Outlet ></Outlet>
-            <Footer></Footer>
+            
             </main>
             
             
