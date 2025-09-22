@@ -7,7 +7,7 @@
     width: 0px;
     padding: 10px;
     border-radius: 2em;
-    border-style:dashed;
+    border-style:none;
     border-width: 0.1em;
     background-color: rgb(255, 255, 255);
     transform: translateY(-10px);

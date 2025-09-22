@@ -1,0 +1,12 @@
+.card-add-content-layout{
+    background-color: beige;
+    border-radius: 10px;
+    flex-basis: 90px;
+    padding: 20px;
+    margin-bottom: 10px;
+   
+}
+.card-add-content-layout:hover{
+    background-color: white;
+    cursor: pointer;
+}

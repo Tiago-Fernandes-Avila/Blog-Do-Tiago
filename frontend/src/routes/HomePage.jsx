@@ -15,6 +15,7 @@ function HomePage() {
 
   useEffect(() => {
     getPostsHome(4, paginaAtual).then((data) => setPosts(data));
+    window.scrollTo(0,0)
   }, [paginaAtual]);
 
   useEffect(() => {
