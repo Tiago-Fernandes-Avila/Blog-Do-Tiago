@@ -22,7 +22,7 @@ export default function ({ content }) {
         console.log(`testing... ${content.subTitles[0].title}`)
     
     return (
-        
+      <div className="main-layout">  
         <div className="post-content-container">
             <h1 className="post-content-title">{content.title}</h1>
             <p className="post-content-intro">{content.intro}</p>
@@ -53,8 +53,8 @@ export default function ({ content }) {
                 })
             }
 
-
-
         </div >
+        
+    </div>
     )
 }

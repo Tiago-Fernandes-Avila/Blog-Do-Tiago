@@ -33,7 +33,7 @@ function HomePage() {
                 
             </PaginationControl >
             
-            <Footer></Footer>
+            
         </div>
     )
 }

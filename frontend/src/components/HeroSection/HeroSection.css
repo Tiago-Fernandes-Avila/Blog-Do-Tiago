@@ -1,19 +1,27 @@
 
 .hero-section{
    background-image: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
-   background-image: url("src/assets/pngtree-flat-minimalistic-technology-lines-business-background-picture-image_1048640.jpg");
+   background-image: url("../../assets/pngtree-flat-minimalistic-technology-lines-business-background-picture-image_1048640.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+  
+   
    height: 300px;
    margin-bottom: 20px;
    display:flex;
    justify-content: center;
    align-items: center;
+   z-index: 1;
 }
 .hero-title{
-    color: rgb(0, 0, 0);    
+    color: rgb(63, 63, 63);    
     text-shadow: 2px 2px 1px 3px;
     font-family: var(--font-julius);
-    font-weight: 200;
+    font-weight: 1000;
     margin: 20px;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: rgb(210, 210, 210) 1px 1px 1px;
 }
 .hero-title::first-letter{
     font-size: 50px;
