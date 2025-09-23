@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <PostPage/>
       },
       {
-        path:'/writearticle',
+        path:'profile/writearticle',
         element: <WriterPage/>
       
       }

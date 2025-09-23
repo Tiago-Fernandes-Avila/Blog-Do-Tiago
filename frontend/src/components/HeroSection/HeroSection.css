@@ -14,14 +14,14 @@
    z-index: 1;
 }
 .hero-title{
-    color: rgb(63, 63, 63);    
-    text-shadow: 2px 2px 1px 3px;
+    color: rgb(29, 29, 29);    
+   
     font-family: var(--font-julius);
     font-weight: 1000;
     margin: 20px;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
-    text-shadow: rgb(210, 210, 210) 1px 1px 1px;
+    
 }
 .hero-title::first-letter{
     font-size: 50px;

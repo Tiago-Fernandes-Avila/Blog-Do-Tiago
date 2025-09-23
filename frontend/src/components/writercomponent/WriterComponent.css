@@ -1,7 +1,7 @@
 .layout-writer {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 6fr 1fr;
     grid-template-rows: 1fr;
     margin: 50px;
 }
@@ -22,7 +22,6 @@
 .add-content-type {
     display: flex;
     flex-direction: column;
-    
 
     background-color: #b8d1ff;
     border-radius: 0px 10px 10px 0px;
@@ -40,5 +39,23 @@
     border-radius: 10px;
     margin-bottom: 20px;
     border: none;
+
+}
+button{
+    border:none;
+    border-radius: 4px;
+    margin: 5px
+    
 }
 
+button:hover{
+    background-color: #f8f8f8;
+    cursor:pointer;
+}
+
+.input-type.para{
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width: 500px;
+    overflow-x: auto;
+}

@@ -6,12 +6,15 @@
 }
 
 .post-content-container{
-    max-width: 1100px;
+    max-width: 1000px;
     min-height: 100vh;
     padding: 20px;
     
 
 }
+
+
+
 
 .post-title{
     text-align: center;
