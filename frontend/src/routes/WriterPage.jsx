@@ -10,7 +10,7 @@ export default function (){
     return (
         <>
 
-            <div className="layout-main">
+            <div className="layout-main" >
             <div style={{fontSize:"25px", padding:"20px"}}>
                 <h1 style={{textAlign:"center", margin:"20px"} }>Área de escrita</h1>
                 <p style={{textAlign:"center"}}>Olá seja bem vindo! antes iniciar o seu post tenha atenção aos seguintes pontos:

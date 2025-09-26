@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PostContent from '../components/PostContent/PostContent.jsx';
 import { getPostContent } from '../http/PostsHttp.js';
-import Footer from '../components/footer/Footer.jsx';
+
 
 
 function PostPage() {

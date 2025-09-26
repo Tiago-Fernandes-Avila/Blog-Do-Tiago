@@ -19,9 +19,9 @@ function Header() {
 
 <div className="nav-search">
             <nav className="nav-links">
-                <Link to="/" className="home"><HomeIcon size={32} color="#fff" className="icon" /></Link>
-                <a href="#"><LinkedIcon size={24} color="#fff" className="icon" /></a>
-                <a href="#"><GithubIcon size={24} color="#fff" className="icon" /> </a>
+                <Link to="/" className="home"><HomeIcon size={32} color="#000000ff" className="icon" /></Link>
+                <a href="#"><LinkedIcon size={24} color="#000000ff" className="icon" /></a>
+                <a href="#"><GithubIcon size={24} color="#000000ff" className="icon" /> </a>
                 
 
                 <a href="#">Login</a>

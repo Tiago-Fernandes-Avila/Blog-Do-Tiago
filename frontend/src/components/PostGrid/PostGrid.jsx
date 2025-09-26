@@ -10,7 +10,7 @@ function PostGrid(props){
         <div className="post-grid">
                
             {objetos.map((e) =>(
-                <PostCard dadosCard={e}/>
+                <PostCard key={crypto.randomUUID()} dadosCard={e}/>
             )
             )}
                     

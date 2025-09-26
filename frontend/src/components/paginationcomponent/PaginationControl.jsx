@@ -1,5 +1,5 @@
 import "./PaginationControl.css"
-import { useEffect, useRef, useState } from "react";
+
 
 export default function PaginationControl({totalPaginas, paginaAtual, setPaginaAtual}) {
    

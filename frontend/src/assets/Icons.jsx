@@ -40,20 +40,21 @@ export function HomeIcon({ size = 48, color = "#69AFBF" }) {
 
   return (
     <svg
-  width={size}
-  height={size}
-  viewBox="0 0 24 24"
-  xmlns="http://www.w3.org/2000/svg"
-  fill={color}
->
-  <path d="M12 3l9 8h-3v9h-12v-9H3l9-8z"/>
-</svg> )
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill={color}
+      style={{ cursor: "pointer", transform: "translateY(-4px)" }}
+    >
+      <path d="M12 3l9 8h-3v9h-12v-9H3l9-8z" />
+    </svg>)
 
- 
+
 
 }
 
-export function SearchIcon({ size = 24, color = "", onClick}) {
+export function SearchIcon({ size = 24, color = "", onClick }) {
   return (
     <svg width={size}
       height={size}
@@ -62,9 +63,25 @@ export function SearchIcon({ size = 24, color = "", onClick}) {
       fill={color}
       style={{ cursor: "pointer" }}
       onClick={onClick}>
-      
+
 
       <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  )
+}
+
+export function ImageIcon({ size = 48, color = "#69AFBF" }) {
+  return (
+    <svg 
+    fill={color} 
+    width={size} 
+    height={size} 
+    style={{transform: "translate(4px,6px)"}}
+    viewBox="0 0 32 32" 
+    version="1.1" 
+    xmlns="http://www.w3.org/2000/svg">
+      <title>image</title>
+      <path d="M0 26.016q0 2.496 1.76 4.224t4.256 1.76h20q2.464 0 4.224-1.76t1.76-4.224v-20q0-2.496-1.76-4.256t-4.224-1.76h-20q-2.496 0-4.256 1.76t-1.76 4.256v20zM4 26.016v-20q0-0.832 0.576-1.408t1.44-0.608h20q0.8 0 1.408 0.608t0.576 1.408v20q0 0.832-0.576 1.408t-1.408 0.576h-20q-0.832 0-1.44-0.576t-0.576-1.408zM6.016 24q0 0.832 0.576 1.44t1.408 0.576h16q0.832 0 1.408-0.576t0.608-1.44v-0.928q-0.224-0.448-1.12-2.688t-1.6-3.584-1.28-2.112q-0.544-0.576-1.12-0.608t-1.152 0.384-1.152 1.12-1.184 1.568-1.152 1.696-1.152 1.6-1.088 1.184-1.088 0.448q-0.576 0-1.664-1.44-0.16-0.192-0.48-0.608-1.12-1.504-1.6-1.824-0.768-0.512-1.184 0.352-0.224 0.512-0.928 2.24t-1.056 2.56v0.64zM6.016 9.024q0 1.248 0.864 2.112t2.112 0.864 2.144-0.864 0.864-2.112-0.864-2.144-2.144-0.864-2.112 0.864-0.864 2.144z"></path>
     </svg>
   )
 }

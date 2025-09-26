@@ -24,11 +24,13 @@ export default function ({ content }) {
     return (
       <div className="main-layout">  
         <div className="post-content-container">
+          
+          <div className="intro ">
             <h1 className="post-content-title">{content.title}</h1>
             <p className="post-content-intro">{content.intro}</p>
             <AuthorInfo authorImg={authorImg} date={date} authorName={authorName}></AuthorInfo>
             <TagType postType={postType}></TagType>
-            
+            </div>
 
             {
                 content.subTitles.map(item => {
