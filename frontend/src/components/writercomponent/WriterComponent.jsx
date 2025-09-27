@@ -1,9 +1,10 @@
 import "./WriterComponent.css"
-import { useState, useEffect, createElement } from 'react'
-import { ImageIcon } from "../../assets/Icons"
+import { useState, useEffect, createElement, useRef } from 'react'
+import { ImageIcon, SaveIcon } from "../../assets/Icons"
+import PopUp from "../popup/PopUp"
 
 function WriterComponent() {
-
+    
     const [elementos, setElementos] = useState([
         {
             type: "title",
@@ -120,9 +121,9 @@ function WriterComponent() {
     function savePost() { 
         
         if(elementos.length  > 4){
-        console.log(elementos)        
+        console.log(elementos)
     }
-    
+
     else{
         alert("Insira pelo menos um subtitulo e um paragrafo neste post antes de salva-lo")
     }
@@ -176,8 +177,10 @@ function WriterComponent() {
                 <button onClick={addParagraph} style={{ padding: "15px" }} className="button-add-content">Adicionar Paragraph</button>
                 <button style={{ padding: "15px" }} onClick={addImage} className="button-add-content">Adicionar imagem</button>
                 <br />
-                <button style={{ padding: "15px" }} className="button-add-content"  onClick={savePost}> Salvar Post</button>
+                <button style={{ padding: "15px" }} className="button-add-content"  onClick={savePost}> Salvar Post <SaveIcon size={24} color="white"/></button>
+                <PopUp isError={false} messege={"O post necessita de pelo menos um sub-titulo e um paragrafo!"}></PopUp>
             </div>
+            
         </div>
 
                 
