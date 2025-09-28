@@ -12,9 +12,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     box-shadow: 1px 1px 5px 3px rgba(106, 106, 106, 0.17);
     background-color: rgb(155, 225, 255);
+    font-size: 14px;
+    text-align: center;
+    color: rgb(29, 29, 29);
+    
 
 }
 
@@ -35,6 +39,3 @@
     cursor: pointer;
 }
 
-.pop-icon {
-    
-}

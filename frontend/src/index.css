@@ -10,7 +10,9 @@
 .container-layout{
   display: block;
 }
-
+Outlet{
+  
+}
 
 :root {
   --primary: #070A40;

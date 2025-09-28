@@ -107,13 +107,13 @@ export function SaveIcon(size = 64, color = "#40311E"){
 export function CompleteIcon(color, size){
 
 return <svg xmlns="http://www.w3.org/2000/svg" 
-fill="#15f400ff" 
-width="64px" 
-height="64px" 
+fill="#ffffffff" 
+width="100px" 
+height="100px" 
 viewBox="0 0 1920.00 1920.00" 
 stroke="#37ff00ff" 
 stroke-width="0.019200000000000002" transform="rotate(0)"
-style={{}}>
+>
 
 
 
@@ -126,12 +126,12 @@ style={{}}>
 </svg>
 }
 
-export function ErrorIcon(size = 12, color = "black"){
+export function ErrorIcon(size = 12, color = "#ff0000d1 "){
   return(
     <svg fill={color} 
-    height={size}
-    width={size}
-    style={{ width:"100%"}}
+    height={128}
+    width={128}
+    
     viewBox="0 0 24 24" 
     xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.5-5.009c0-.867.659-1.491 1.491-1.491.85 0 1.509.624 1.509 1.491 0 .867-.659 1.509-1.509 1.509-.832 0-1.491-.642-1.491-1.509zM11.172 6a.5.5 0 0 0-.499.522l.306 7a.5.5 0 0 0 .5.478h1.043a.5.5 0 0 0 .5-.478l.305-7a.5.5 0 0 0-.5-.522h-1.655z" ></path></g></svg>
   )
